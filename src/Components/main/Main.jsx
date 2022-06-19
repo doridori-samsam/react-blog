@@ -1,6 +1,7 @@
 import React from 'react';
 import './main.css';
 import Posts from './post/Posts';
+import About from './about/About';
 
 function Main(){
     return(
@@ -15,6 +16,7 @@ function MainLayout(){
         <div className="max-width">
             <PostHidden/>
             <Posts/>
+            <About />
         </div>
     )
 }
