@@ -24,7 +24,7 @@ function FooterHeader(){
 }
 
 function TopButton(){
-    return <button className="top-button">TOP</button>
+    return <button className="top-button" onClick={()=>{window.scrollTo(0,0);}}>TOP</button>
 }
 
 export default Footer;
