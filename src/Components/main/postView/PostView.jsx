@@ -1,6 +1,8 @@
 import React from 'react';
+import './view.css';
 import Header from '../../header/Header';
 import Banner from '../../banner/Banner';
+import Footer from '../../footer/Footer';
 import PostBackground from '../../../assets/post-background6.jpg';
 
 function PostView(){
@@ -9,6 +11,7 @@ function PostView(){
         <Header/>
         <Banner/>
         <PostPage/>
+        <Footer/>
         </>
     )
 }
@@ -136,3 +139,6 @@ function BackButton(){
         </a>
     )
 }
+
+
+export default PostView;

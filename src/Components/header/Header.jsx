@@ -47,7 +47,7 @@ function LogIn(){
 function ProfileImg(){
     return (
         <li className="profile-img">
-            <a href="#">
+            <a href="#none">
             <img src={Profile} alt="My Page" />
             </a>
         </li>
@@ -57,7 +57,7 @@ function ProfileImg(){
 function Write(){
     return(
         <li>
-            <a href="#" className="button">
+            <a href="#none" className="button">
             <img src={WriteBtn} alt="" />
             <span>Write</span>
             </a>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './post.css';
 import './category.css';
 import './author.css';
@@ -6,14 +7,14 @@ import AuthorImg from '../../../assets/profile.jpg';
 
 function Post(props){
     return(
+        <Link to="/postview1">
         <li>
-            <a href="post-view.html" className="post">
             <article>
                 <img src={process.env.PUBLIC_URL+`/assets/${props.imgName}.jpg`} alt=""></img>
             <PostContents/>
             </article>
-            </a>
         </li>
+        </Link>
     )
 }
 

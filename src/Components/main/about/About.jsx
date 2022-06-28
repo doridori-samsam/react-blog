@@ -1,6 +1,6 @@
 import React from 'react';
 import './about.css';
-import Facebook from '../../../assets/Facebook.svg';
+
 
 function About(){
     return(
