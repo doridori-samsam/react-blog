@@ -1,7 +1,8 @@
 import React from 'react';
+import './wrapbox.css';
 import './view.css';
 import Header from '../../header/Header';
-import Banner from '../../banner/Banner';
+import PostViewBanner from '../../banner/PostViewBanner';
 import Footer from '../../footer/Footer';
 import PostBackground from '../../../assets/post-background6.jpg';
 
@@ -9,7 +10,7 @@ function PostView(){
     return(
         <>
         <Header/>
-        <Banner/>
+        <PostViewBanner/>
         <PostPage/>
         <Footer/>
         </>
@@ -52,8 +53,8 @@ function PostInfo(){
         <dl className="author-wrap">
             <dt className="a11y-hidden">Author</dt>
             <AuthorInfo/>
-            <CreatedInfo/>
             <dt className="a11y-hidden">Created</dt>
+            <CreatedInfo/>
         </dl>
     )
 }
@@ -70,7 +71,7 @@ function AuthorInfo(){
 function CreatedInfo(){
     return(
         <dd className="created">
-            "2022.05.25"
+            2022.05.25
         </dd>
         
     )
@@ -78,7 +79,7 @@ function CreatedInfo(){
 
 function PostCategory(){
     return(
-        <dl className="a11y-hidden">
+        <dl className="category">
             <dt className="a11y-hidden">Category</dt>
             <dd>Life</dd>
             <dd>Style</dd>

@@ -7,14 +7,14 @@ import AuthorImg from '../../../assets/profile.jpg';
 
 function Post(props){
     return(
-        <Link to="/postview1">
         <li>
+            <Link to="/postview1" className="post">
             <article>
                 <img src={process.env.PUBLIC_URL+`/assets/${props.imgName}.jpg`} alt=""></img>
             <PostContents/>
             </article>
+            </Link>
         </li>
-        </Link>
     )
 }
 

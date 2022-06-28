@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import "./App.css";
 import Header from './Components/header/Header';
 import Banner from './Components/banner/Banner';
@@ -9,7 +9,12 @@ import PostView from './Components/main/postView/PostView';
 
 function App() {
 	return(
-	<PostView/>
+	<BrowserRouter>
+	<Routes>
+			<Route path="/" element={<Home/>}/>
+			<Route path="/postview1" element={<PostView/>}/>
+	</Routes>
+	</BrowserRouter>
 	);
 }
 
