@@ -41,6 +41,19 @@
 	box-shadow: 0 0 0 1px var(--red-color);
 }
 
+/*로그인 버튼*/
+.button.login {
+	background: var(--gray-background);
+	color: var(--black-color);
+	
+}
+
+/*register 버튼*/
+.button.register {
+	background: var(--gray-background);
+	color: var(--black-color);
+}
+
 /* 저장 버튼 */
 .btn-save {
 	width: 9.6rem;
