@@ -5,14 +5,17 @@ import './posts.css';
 
 function Posts(){
     return(
-        <ul className="posts">
-            <Post imgName="post-img6"/>
-            <Post imgName="post-img5"/>
-            <Post imgName="post-img4"/>
-            <Post imgName="post-img3"/>
-            <Post imgName="post-img2"/>
-            <Post imgName="post-img1"/>
-        </ul>
+        <>
+        <Post/>
+        </>
+        // <ul className="posts">
+        //     <Post imgName="post-img6"/>
+        //     <Post imgName="post-img5"/>
+        //     <Post imgName="post-img4"/>
+        //     <Post imgName="post-img3"/>
+        //     <Post imgName="post-img2"/>
+        //     <Post imgName="post-img1"/>
+        // </ul>
     )
 }
 

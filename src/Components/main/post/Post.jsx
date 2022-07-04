@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import dummy from '../../../db/data.json';
 import './post.css';
 import './category.css';
 import './author.css';
@@ -7,14 +8,18 @@ import AuthorImg from '../../../assets/profile.jpg';
 
 function Post(props){
     return(
-        <li>
-            <Link to="/postview1" className="post">
-            <article>
+        <ul className="posts">
+            {dummy.posts.map(num => (
+                <li key = {num.id}>
+                <Link className = "post" to={`/postview/${num.id}`}>
+                <article>
                 <img src={process.env.PUBLIC_URL+`/assets/${props.imgName}.jpg`} alt=""></img>
-            <PostContents/>
-            </article>
-            </Link>
-        </li>
+                <PostContents/>
+                </article>
+                </Link>
+                </li>
+            ))}
+        </ul>
     )
 }
 

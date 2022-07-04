@@ -6,13 +6,15 @@ import Banner from './Components/banner/Banner';
 import Main from './Components/main/Main';
 import Footer from  './Components/footer/Footer';
 import PostView from './Components/main/postView/PostView';
+import dummy from '../src/db/data.json';
 
 function App() {
+	console.log(dummy);
 	return(
 	<BrowserRouter>
 	<Routes>
 			<Route path="/" element={<Home/>}/>
-			<Route path="/postview1" element={<PostView/>}/>
+			<Route path="/postview/:num" element={<PostView/>}/>
 	</Routes>
 	</BrowserRouter>
 	);

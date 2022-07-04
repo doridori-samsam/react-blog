@@ -1,10 +1,11 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import dummy from '../../../db/data.json';
 import './wrapbox.css';
 import './view.css';
 import Header from '../../header/Header';
 import PostViewBanner from '../../banner/PostViewBanner';
 import Footer from '../../footer/Footer';
-import PostBackground from '../../../assets/post-background6.jpg';
 
 function PostView(){
     return(
@@ -38,88 +39,60 @@ function PostViewLayout(){
 function PostViewContent(){
     return(
         <div className="inner">
-            <PostInfo/>
-            <PostCategory/>
-            <PostTitle/>
-            <ViewContents/>
+            <PostContent/>
             <PostButtons/>
             <BackButton/>
         </div>
     )
 }
 
-function PostInfo(){
+function PostContent(){
+
+    const { num } = useParams();
+    const postList = dummy.posts.filter((post) => post.id === Number(num))
+  
+  
     return(
-        <dl className="author-wrap">
-            <dt className="a11y-hidden">Author</dt>
-            <AuthorInfo/>
-            <dt className="a11y-hidden">Created</dt>
-            <CreatedInfo/>
-        </dl>
-    )
-}
-
-function AuthorInfo(){
-    return( 
-        <dd className="author">
-        <img src={process.env.PUBLIC_URL+'/assets/profile.jpg'} alt=""/>
-         Chilli
-        </dd>
-    )
-};
-
-function CreatedInfo(){
-    return(
-        <dd className="created">
-            2022.05.25
-        </dd>
-        
-    )
-}
-
-function PostCategory(){
-    return(
-        <dl className="category">
-            <dt className="a11y-hidden">Category</dt>
-            <dd>Life</dd>
-            <dd>Style</dd>
-        </dl>
-    )
-}
-
-function PostTitle(){
-    return(
-        <div className="title-wrap">
-            <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h2>
-            <button className="btn-like">Like</button>
-        </div>
-    )
-}
-
-function ViewContents(){
-    return(
-        <div className="view-contents">
-            <p>
-                "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore illum nostrum perferendis voluptas, voluptate soluta corrupti dolore quidem. Placeat, eaque! Exercitationem est
-                facilis dolor quas odio cum incidunt repudiandae vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore illum nostrum perferendis voluptas, voluptate soluta corrupti
-                dolore quidem. Placeat, eaque! Exercitationem est facilis dolor quas odio cum incidunt repudiandae vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore illum
-                nostrum perferendis voluptas, voluptate soluta corrupti dolore quidem. Placeat, eaque! Exercitationem est facilis dolor quas odio cum incidunt repudiandae vel. Lorem ipsum dolor sit
-                amet consectetur, adipisicing elit. Inventore illum nostrum perferendis voluptas, voluptate soluta corrupti dolore quidem. Placeat, eaque! Exercitationem est facilis dolor quas odio
-                cum incidunt repudiandae vel.""
-            </p>
-            <img src={PostBackground} alt=""/>
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore illum nostrum perferendis voluptas, voluptate soluta corrupti dolore quidem. Placeat, eaque! Exercitationem est
-                facilis dolor quas odio cum incidunt repudiandae vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore illum nostrum perferendis voluptas, voluptate soluta corrupti
-                dolore quidem. Placeat, eaque! Exercitationem est facilis dolor quas odio cum incidunt repudiandae vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore illum
-                nostrum perferendis voluptas, voluptate soluta corrupti dolore quidem. Placeat, eaque! Exercitationem est facilis dolor quas odio cum incidunt repudiandae vel. Lorem ipsum dolor sit
-                amet consectetur, adipisicing elit. Inventore illum nostrum perferendis voluptas, voluptate soluta corrupti dolore quidem. Placeat, eaque! Exercitationem est facilis dolor quas odio
-                cum incidunt repudiandae vel.
-			</p>
-        </div>
-    )
-}
-
+      <>
+      {postList.map(info => (
+        <>
+         <dl className="author-wrap">
+         <dt className="a11y-hidden">Author</dt>
+         <dd className="author">
+         <img src={process.env.PUBLIC_URL+'/assets/profile.jpg'} alt=""/>
+           {info.userName}
+         </dd>
+         <dt className="a11y-hidden">Created</dt>
+         <dd className="created">{info.created}</dd>
+         </dl>
+         <dl className="category">
+         <dt className="a11y-hidden">Category</dt>
+         <dd>{info.category[0]}</dd>
+         <dd>{info.category[1]}</dd>
+         </dl>
+         <div className="title-wrap">
+               <h2>{info.title}</h2>
+               <button className="btn-like">Like</button>
+         </div>
+         <div className="view-contents">
+               <p>{info.contents[0].text}</p>
+               <img src={process.env.PUBLIC_URL+`${info.contents[1].src}`} alt=""/>
+               <p>
+                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore illum nostrum perferendis voluptas, voluptate soluta corrupti dolore quidem. Placeat, eaque! Exercitationem est
+                   facilis dolor quas odio cum incidunt repudiandae vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore illum nostrum perferendis voluptas, voluptate soluta corrupti
+                   dolore quidem. Placeat, eaque! Exercitationem est facilis dolor quas odio cum incidunt repudiandae vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore illum
+                   nostrum perferendis voluptas, voluptate soluta corrupti dolore quidem. Placeat, eaque! Exercitationem est facilis dolor quas odio cum incidunt repudiandae vel. Lorem ipsum dolor sit
+                   amet consectetur, adipisicing elit. Inventore illum nostrum perferendis voluptas, voluptate soluta corrupti dolore quidem. Placeat, eaque! Exercitationem est facilis dolor quas odio
+                   cum incidunt repudiandae vel.
+         </p>
+         </div>
+         </>
+        ))}
+         </>
+      )
+  }
+  
+  
 function PostButtons(){
     return(
         <div className="btn-group">
