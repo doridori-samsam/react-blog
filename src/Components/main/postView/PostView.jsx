@@ -49,48 +49,44 @@ function PostViewContent(){
 function PostContent(){
 
     const { num } = useParams();
-    const postList = dummy.posts.filter((post) => post.id === Number(num))
+    const postList = dummy.posts[num-1]
   
   
     return(
-      <>
-      {postList.map(info => (
         <>
-         <dl className="author-wrap">
-         <dt className="a11y-hidden">Author</dt>
-         <dd className="author">
-         <img src={process.env.PUBLIC_URL+'/assets/profile.jpg'} alt=""/>
-           {info.userName}
-         </dd>
-         <dt className="a11y-hidden">Created</dt>
-         <dd className="created">{info.created}</dd>
-         </dl>
-         <dl className="category">
-         <dt className="a11y-hidden">Category</dt>
-         <dd>{info.category[0]}</dd>
-         <dd>{info.category[1]}</dd>
-         </dl>
-         <div className="title-wrap">
-               <h2>{info.title}</h2>
-               <button className="btn-like">Like</button>
-         </div>
-         <div className="view-contents">
-               <p>{info.contents[0].text}</p>
-               <img src={process.env.PUBLIC_URL+`${info.contents[1].src}`} alt=""/>
-               <p>
-                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore illum nostrum perferendis voluptas, voluptate soluta corrupti dolore quidem. Placeat, eaque! Exercitationem est
-                   facilis dolor quas odio cum incidunt repudiandae vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore illum nostrum perferendis voluptas, voluptate soluta corrupti
-                   dolore quidem. Placeat, eaque! Exercitationem est facilis dolor quas odio cum incidunt repudiandae vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore illum
-                   nostrum perferendis voluptas, voluptate soluta corrupti dolore quidem. Placeat, eaque! Exercitationem est facilis dolor quas odio cum incidunt repudiandae vel. Lorem ipsum dolor sit
-                   amet consectetur, adipisicing elit. Inventore illum nostrum perferendis voluptas, voluptate soluta corrupti dolore quidem. Placeat, eaque! Exercitationem est facilis dolor quas odio
-                   cum incidunt repudiandae vel.
-         </p>
-         </div>
-         </>
-        ))}
-         </>
-      )
-  }
+            <dl className="author-wrap">
+            <dt className="a11y-hidden">Author</dt>
+            <dd className="author">
+            <img src={process.env.PUBLIC_URL+'/assets/profile.jpg'} alt=""/>
+            {postList.userName}
+            </dd>
+            <dt className="a11y-hidden">Created</dt>
+            <dd className="created">{postList.created}</dd>
+            </dl>
+            <dl className="category">
+            <dt className="a11y-hidden">Category</dt>
+            {postList.category.map((tag, i) => {
+                return <dd key={i}>{tag}</dd>;
+            })}
+            </dl>
+            <div className="title-wrap">
+                <h2>{postList.title}</h2>
+                <button className="btn-like">Like</button>
+            </div>
+            <div className="view-contents">
+            {postList.contents.map((content, i) => {
+            if (content.type === "p") {
+                return <p key={i}>{content.text}</p>;
+            } else if (content.type === "img") {
+                return <img key={i} src={process.env.PUBLIC_URL+`${content.src}`} alt="" />;
+            }
+            })}
+            </div>
+        </>
+        )}
+        
+      
+  
   
   
 function PostButtons(){

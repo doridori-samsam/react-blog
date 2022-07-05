@@ -1,5 +1,6 @@
 import React from 'react';
 import './banner.css';
+import dummy from '../../db/data.json';
 
 function Banner(){
     return(
@@ -20,29 +21,13 @@ function BannerLayout(){
 function BannerContents(){
     return(
         <div className="banner-contents">
-            <SubText/>
-            <MainText/>
-            <Description/>
+            <p className="sub-text">{dummy.blog.subTitle}</p>
+            <p className="main-text">{dummy.blog.mainTitle}</p>
+            <p className="description">{dummy.blog.description}</p>
         </div>
     )
 }
 
-function SubText(){
-    return(
-        <p className="sub-text">React Blog</p>
-    )
-}
 
-function MainText(){
-    return(
-        <p className="main-text">My BLOG</p>
-    )
-}
-
-function Description(){
-    return(
-        <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nostrum dolor provident beatae deserunt magnam, illo neque. Maiores ipsum commodi dolorum beatae aliquid laboriosam est</p>
-    )
-}
 
 export default Banner;

@@ -1,6 +1,6 @@
 import React from 'react';
 import './about.css';
-
+import dummy from '../../../db/data.json';
 
 function About(){
     return(
@@ -27,12 +27,12 @@ function UserProfile(){
 
 function UserName(){
     return(
-        <p className="user-name">Chilli</p>
+        <p className="user-name">{dummy.users[0].name}</p>
     )
 }
 
 function UserDescription(){
-   return <p className="user-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+   return <p className="user-description">{dummy.users[0].userInfo}</p>
 }
 
 function CategoryHeader(){

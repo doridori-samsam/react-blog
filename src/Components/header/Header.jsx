@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import './header.css';
 import Logo from '../../assets/Logo.svg';
 import Profile from '../../assets/profile.jpg';
@@ -29,9 +30,9 @@ function HeaderLayout(){
 function MainLogo(){
     return(
     <h1>
-    <a href="./">
+    <Link to="/">
         <img src={Logo} alt="My Blog" />
-    </a>
+    </Link>
     </h1>
     );
 }

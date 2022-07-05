@@ -4,102 +4,49 @@ import dummy from '../../../db/data.json';
 import './post.css';
 import './category.css';
 import './author.css';
-import AuthorImg from '../../../assets/profile.jpg';
 
-function Post(props){
+function Post(){  
+
     return(
         <ul className="posts">
-            {dummy.posts.map(num => (
-                <li key = {num.id}>
-                <Link className = "post" to={`/postview/${num.id}`}>
-                <article>
-                <img src={process.env.PUBLIC_URL+`/assets/${props.imgName}.jpg`} alt=""></img>
-                <PostContents/>
-                </article>
-                </Link>
-                </li>
-            ))}
+            {dummy.posts.map((list, i) => {
+                return(
+                 <li key={i}>
+                 <Link className="post" to={`/postview/${list.id}`}>
+                 <article>
+                    <img
+                    src={process.env.PUBLIC_URL + `${list.thumbnail}`}
+                    alt="">
+                    </img>
+                    <div className="contents-wrap">
+                        {/* 어려웠던 부분  */}
+                    <dl className="category">                            
+                        <dt className="a11y-hidden">Category</dt>
+                        {list.category.map((tag, j) => {
+                           return <dd key={j}>{tag}</dd>
+                        })}
+                    </dl>
+                    <h3>{list.title}</h3>
+                    <dl className="author-wrap">
+                        <dt className="a11y-hidden">Author</dt>
+                        <dd className="author">
+                        <img src={process.env.PUBLIC_URL + `${list.profileImg}`} alt=""></img>
+                        Chilli
+                        </dd>
+                        <dt className="a11y-hidden">Created</dt>
+                        <dd className="created">{list.created}</dd>
+                    </dl>
+                    <p className="post-description">{list.contents[0].text}</p>
+                    </div>
+                 </article>
+                 </Link>
+                 </li>
+                )
+            })}
+           
         </ul>
-    )
+   )
 }
 
-function PostContents(){
-    return(
-        <div className="contents-wrap">
-        <Category/>
-        <PostTitle/>
-        <Author/>
-        <PostPreview/>
-        </div>
-    )
-}
 
-function Category(){
-    return(
-        <dl className="category">
-            <dt className="a11y-hidden">Category</dt>
-			<dd>Life</dd>
-			<dd>Style</dd>
-        </dl>
-    )
-}
-
-function PostTitle(){
-    return(
-        <h3>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit
-        </h3>
-    )
-}
-
-function Author(){
-    return(
-        <dl className="author-wrap">
-            <AuthorHidden/>
-            <AuthorInfo/>
-            <CreateHidden/>
-            <CreateDate/>
-        </dl>
-    )
-}
-
-function AuthorHidden(){
-    return(
-        <dt className="a11y-hidden">Author</dt>
-    )
-}
-
-function AuthorInfo(){
-    return(
-        <dd className="author">
-            <img src={AuthorImg} alt=""></img>
-             Chilli
-        </dd>
-    )
-}
-
-function CreateHidden(){
-    return(
-        <dt className="a11y-hidden">Created</dt>
-    )
-}
-
-function CreateDate(){
-    return(
-        <dd className="created">2022.05.25</dd>
-    )
-}
-
-function PostPreview(){
-    return(
-        <p className="post-description">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore illum nostrum perferendis voluptas, voluptate soluta corrupti dolore quidem. Placeat, eaque! Exercitationem est
-            facilis dolor quas odio cum incidunt repudiandae vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore illum nostrum perferendis voluptas, voluptate soluta
-            corrupti dolore quidem. Placeat, eaque! Exercitationem est facilis dolor quas odio cum incidunt repudiandae vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore
-            illum nostrum perferendis voluptas, voluptate soluta corrupti dolore quidem. Placeat, eaque! Exercitationem est facilis dolor quas odio cum incidunt repudiandae vel. Lorem ipsum
-            dolor sit amet consectetur, adipisicing elit. Inventore illum nostrum perferendis voluptas, voluptate soluta corrupti dolore quidem. Placeat, eaque! Exercitationem est facilis
-            dolor quas odio cum incidunt repudiandae vel.
-        </p>
-    )
-}
 export default Post;
