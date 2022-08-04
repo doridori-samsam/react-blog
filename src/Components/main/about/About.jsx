@@ -64,7 +64,7 @@ function CategoryList(props){
 function FollowSNS(){
     return(
         <ul className="sns">
-            <SNSList sns="Facebook"/>
+            <SNSList sns={dummy.users[0].name}/>
             <SNSList sns="Twitter"/>
             <SNSList sns="Instagram"/>
             <SNSList sns="Github"/>
