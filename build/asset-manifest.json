@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/react-blog/static/css/main.5d01c044.css",
+    "main.js": "/react-blog/static/js/main.9321f894.js",
+    "static/media/post-background6.jpg": "/react-blog/static/media/post-background6.49660d99199be9c58b3f.jpg",
+    "static/media/background.jpg": "/react-blog/static/media/background.9d8ffdf2b026e3a71002.jpg",
+    "static/media/profile.jpg": "/react-blog/static/media/profile.e2608c2bb9d5a58c15ce.jpg",
+    "static/media/Github.svg": "/react-blog/static/media/Github.44eca8266047557a4392.svg",
+    "static/media/Logo.svg": "/react-blog/static/media/Logo.ea185720a23355dde4b383c500d5238d.svg",
+    "static/media/Twitter.svg": "/react-blog/static/media/Twitter.710e72afc7caf1b555e2.svg",
+    "static/media/icon-modify.svg": "/react-blog/static/media/icon-modify.a0c44dddeeb034405fbd.svg",
+    "static/media/icon-register.svg": "/react-blog/static/media/icon-register.14da19af764629d809f4443e36ee3427.svg",
+    "static/media/Instagram.svg": "/react-blog/static/media/Instagram.257baf24eaca6782ee43.svg",
+    "static/media/Facebook.svg": "/react-blog/static/media/Facebook.3bf3b52a20142d76f4db.svg",
+    "static/media/icon-delete.svg": "/react-blog/static/media/icon-delete.cdfd12b1245deea1ae59.svg",
+    "static/media/icon-modify-white.svg": "/react-blog/static/media/icon-modify-white.7936232650b55b108bd177114b80eedb.svg",
+    "static/media/icon-image.svg": "/react-blog/static/media/icon-image.5ee70d208dd203586758.svg",
+    "static/media/icon-logout.svg": "/react-blog/static/media/icon-logout.24d6f1e18bf12b306a121ff821cd4266.svg",
+    "static/media/icon-save.svg": "/react-blog/static/media/icon-save.8857aa83c9b6f312a8f4.svg",
+    "static/media/loader.svg": "/react-blog/static/media/loader.22b61e80d5653c691f98.svg",
+    "static/media/icon-like.svg": "/react-blog/static/media/icon-like.ea57499461b6f402eadd.svg",
+    "static/media/icon-delete-white.svg": "/react-blog/static/media/icon-delete-white.b1c660db8a27a74dad21.svg",
+    "static/media/icon-save-white.svg": "/react-blog/static/media/icon-save-white.05943bbb17b95d133b6b.svg",
+    "static/media/icon-login.svg": "/react-blog/static/media/icon-login.8e36ae402cd69fd4cdea4c5934019277.svg",
+    "static/media/icon-like-white.svg": "/react-blog/static/media/icon-like-white.547a2a003e8f8143fc9c.svg",
+    "static/media/noimg.svg": "/react-blog/static/media/noimg.09842aaa615e49962b18.svg",
+    "index.html": "/react-blog/index.html",
+    "static/media/ArrowLeft-blue.svg": "/react-blog/static/media/ArrowLeft-blue.a8f040986b41c7713bf5.svg",
+    "static/media/ArrowTop.svg": "/react-blog/static/media/ArrowTop.31b9123f76deea3066cd.svg",
+    "main.5d01c044.css.map": "/react-blog/static/css/main.5d01c044.css.map",
+    "main.9321f894.js.map": "/react-blog/static/js/main.9321f894.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5d01c044.css",
+    "static/js/main.9321f894.js"
+  ]
+}
