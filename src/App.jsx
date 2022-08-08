@@ -11,7 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/react-blog" element={<Home />} />
         <Route exact path="/postview/:num" element={<PostView />} />
       </Routes>
     </BrowserRouter>
